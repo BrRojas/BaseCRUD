@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-
+@Service
 public class ProductServiceImp implements ProductService{
 
     @Autowired
     ProductRepository productRepository;
 
     @Override
-    public Product createOrder(Product product) {
+    public Product createProduct(Product product) {
         return productRepository.save(product);
     }
 
@@ -28,7 +28,7 @@ public class ProductServiceImp implements ProductService{
     }
 
     @Override
-    public Product upDateOrder(Long id,String name, Double price ) {
+    public Product upDateProduct(Long id,String name, Double price ) {
         Product product = productRepository.findById(id)
                 .orElseThrow(() ->new RuntimeException("Producto no encontrado con ID" + id));
         product.setName(name);

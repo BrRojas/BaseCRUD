@@ -4,10 +4,12 @@ import com.base.basecrud.model.Order;
 import com.base.basecrud.model.Product;
 import com.base.basecrud.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class OrderServiceImp implements OrderService{
 
     @Autowired
@@ -25,10 +27,10 @@ public class OrderServiceImp implements OrderService{
         return order;
     }
 
-    @Override
+   /* @Override
     public Order upDateUser(Long id) {
         return null;
-    }
+    }*/
 
     @Override
     public List<Order> findAll() {

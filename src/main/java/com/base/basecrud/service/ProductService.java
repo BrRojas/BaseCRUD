@@ -8,9 +8,9 @@ import java.util.Optional;
 
 public interface ProductService {
 
-    Product createOrder(Product product);
+    Product createProduct(Product product);
     Product findById(Long id);
-    Product upDateOrder(Long id,String name,Double price);
+    Product upDateProduct(Long id,String name,Double price);
     List<Product> findAll();
     void deleteProductById(Long id);
 }
