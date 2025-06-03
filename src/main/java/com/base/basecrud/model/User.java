@@ -1,13 +1,12 @@
 package com.base.basecrud.model;
 
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
-import org.apache.el.util.Validation;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
