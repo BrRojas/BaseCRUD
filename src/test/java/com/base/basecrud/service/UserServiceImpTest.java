@@ -1,6 +1,5 @@
 package com.base.basecrud.service;
 
-import com.base.basecrud.model.Order;
 import com.base.basecrud.model.User;
 import com.base.basecrud.repository.UserRepository;
 import org.junit.jupiter.api.Test;
@@ -9,7 +8,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.List;
+
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
@@ -45,6 +45,21 @@ class UserServiceImpTest {
 
     @Test
     void findByID() {
+        Long id = 1L;
+        User user = new User(id,"Braian","1234",null);
+
+        when(userRepository.findById(id)).thenReturn(Optional.of(user));
+
+        User result = userServiceImp.findByID(id);
+
+
+        assertEquals("Braian",result.getMail());
+        assertEquals("1234",result.getPassword());
+        verify(userRepository).findById(id);
+
+
+
+
     }
 
     @Test
