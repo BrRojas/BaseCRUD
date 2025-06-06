@@ -33,6 +33,7 @@ public class UserServiceImp implements UserService{
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado con ID " + id));
         user.setMail(mail);
         user.setPassword(password);
+
         return user;
     }
 

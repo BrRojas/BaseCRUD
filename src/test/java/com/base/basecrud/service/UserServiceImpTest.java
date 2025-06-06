@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -65,7 +66,19 @@ class UserServiceImpTest {
 
     @Test
     void upDateUser() {
+        Long id = 1L;
+        User existingUser = new User(id, "Braian", "1234", null);
+        User updatedUser = new User(id, "Brandom", "4321", null);
+
+        when(userRepository.findById(id)).thenReturn(Optional.of(existingUser));
+
+        User result = userServiceImp.upDateUser(id, "Brandom", "4321");
+
+        assertEquals("Brandom", result.getMail());
+        assertEquals("4321", result.getPassword());
+        verify(userRepository).findById(id);
     }
+
 
     @Test
     void findAllUsers() {
