@@ -1,7 +1,6 @@
 package com.base.basecrud.controller;
 
 import com.base.basecrud.model.Order;
-import com.base.basecrud.model.Product;
 import com.base.basecrud.service.OrderServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

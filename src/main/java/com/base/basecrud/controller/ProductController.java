@@ -1,8 +1,6 @@
 package com.base.basecrud.controller;
 
 import com.base.basecrud.model.Product;
-import com.base.basecrud.model.User;
-import com.base.basecrud.repository.ProductRepository;
 import com.base.basecrud.service.ProductServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
